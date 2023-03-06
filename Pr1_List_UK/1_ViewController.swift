@@ -15,10 +15,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set title to View Controller
         self.title = "Items"
+        
+        // conform to 2 main protocol for UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+        //
         if !UserDefaults().bool(forKey: "setup") {
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "count")
